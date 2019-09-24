@@ -1,0 +1,15 @@
+//工具->清除浮动
+
+@mixin utils-clearfix{
+    $selector:&;
+    @at-root{
+      #{$selector}::after,//清除浮动
+      #{$selector}::before {
+        display: block;
+        content: "";
+      }
+      #{$selector}::after {
+        clear: both;
+      }
+    }
+  };

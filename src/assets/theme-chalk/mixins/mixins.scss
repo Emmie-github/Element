@@ -1,44 +1,49 @@
-@import './config.scss';
-@import '../common/var.scss';
+@import "./config.scss";
+@import "../common/var.scss";
 
-
-//混合 mixin .el-row BEM->b (block)  
+//混合 mixin .el-row BEM->b (block)
 /*BEM*/
-@mixin b($block){//块
-    $B:$namespace + '-' + $block;
-   @at-root{
-      .#{$B}{
-        @content;
-      }
+@mixin b($block) {
+  //块
+  $B: $namespace + "-" + $block;
+  @at-root {
+    .#{$B} {
+      @content;
     }
-  };
-@mixin m($modifier) {//修饰符 scss Lists @each遍历
-    $selector:&;
-    $currentSelector:"";
-    @each $unit in $modifier{
-      $currentSelector:$currentSelector + $selector + $modifier--separator + $unit + ',';
+  }
+}
+@mixin m($modifier) {
+  //修饰符 scss Lists @each遍历
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: $currentSelector +
+      $selector +
+      $modifier--separator +
+      $unit +
+      ",";
+  }
+  @at-root {
+    #{$currentSelector} {
+      @content;
     }
-    @at-root{
-      #{$currentSelector}{
-        @content;
-      }
+  }
+}
+@mixin when($state) {
+  //关于状态
+  // $selector:&;
+  // $currentState:$selector + '.'+ $state-prefix + $state;
+  @at-root {
+    // #{$currentState}{
+    //   @content;
+    // }
+    &.#{$state-prefix + $state} {
+      @content;
     }
-  };
-@mixin when($state){//关于状态
-    // $selector:&;
-    // $currentState:$selector + '.'+ $state-prefix + $state;
-  
-    @at-root{
-      // #{$currentState}{
-      //   @content;
-      // }
-      &.#{$state-prefix + $state}{
-        @content;
-      }
-    }
-  };
+  }
+}
 
-//混合 minxin .el-col 
+//混合 minxin .el-col
 //断点 (break points)
 // const sm=768px;
 // const md=992px;
@@ -52,12 +57,12 @@
 //   xl:(min-width:xl);
 // }
 
-@mixin res($key,$map:$--breakPoints){
-  @if map-has-key($map, $key){
-    @media only screen and #{inspect(map-get($map, $key))}{
+@mixin res($key, $map: $--breakPoints) {
+  @if map-has-key($map, $key) {
+    @media only screen and #{inspect(map-get($map, $key))} {
       @content;
     }
-  }@else{
-    @warn "undefined points:`#{$map}`"
+  } @else {
+    @warn "undefined points:`#{$map}`";
   }
-};
+}

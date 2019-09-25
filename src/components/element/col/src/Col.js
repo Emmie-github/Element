@@ -28,9 +28,9 @@ export default {
     xl: [Number, Object],
   },
   computed: {
-    // 取到gutter
     gutter() {
       let parent = this.$parent;
+
       while (parent && parent.$options.name !== 'ElRow') {
         parent = parent.$parent;
       }
@@ -51,20 +51,20 @@ export default {
           classList.push(
             prop === 'span'
               ? `el-col-${this[prop]}`
-              : `el-col-${[prop]}-${this[prop]}`,
+              : `el-col-${prop}-${this[prop]}`,
           );
         }
       });
+
       ['xs', 'sm', 'md', 'lg', 'xl'].forEach((size) => {
         if (typeof this[size] === 'number') {
-          // console.log(`el-col-${size}-${this[size]}`);
           classList.push(`el-col-${size}-${this[size]}`);
         } else if (typeof this[size] === 'object') {
           // {
-          //     span:6,
-          //     offset:8,
-          //     push:7,
-          //     pull:9
+          //   span: 6,
+          //   offset: 8,
+          //   push: 7,
+          //   pull: 9
           // }
           // el-col-xs-6
           // el-col-xs-offset-8
@@ -74,8 +74,8 @@ export default {
           Object.keys(props).forEach((prop) => {
             classList.push(
               prop === 'span'
-                ? `ele-col-${size}-${props[prop]}`
-                : `ele-col-${size}-${prop}-${props[prop]}`,
+                ? `el-col-${size}-${props[prop]}`
+                : `el-col-${size}-${prop}-${props[prop]}`,
             );
           });
         }

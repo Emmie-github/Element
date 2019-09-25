@@ -1,7 +1,7 @@
 @import "./mixins/mixins.scss";
 
+ //循环map数据each keys(name,value) in map
 .hidden {
-  //循环map数据each keys(name,value) in map
   @each $break-points-name, $value in $--breakPoints-spec {
     &-#{$break-points-name} {
       @include res($break-points-name, $--breakPoints-spec) {

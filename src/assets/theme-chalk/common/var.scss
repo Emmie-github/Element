@@ -13,15 +13,15 @@ $--breakPoints:(//map
 );
 //display.scss
 $--breakPoints-spec:(
-'xs-only':(max-width: $--sm -1),
-'sm-only':'(min-width: #{$--sm}) and (max-width:#{$--md -1})',
-'sm-and-donw':(max-width:$--md -1),
+'xs-only':(max-width: $--sm - 1),
+'sm-only':'(min-width: #{$--sm}) and (max-width:#{$--md - 1})',
+'sm-and-donw':(max-width:$--md - 1),
 'sm-and-up':(min-width:$--sm),
-'md-only':'(min-width:#{$--md}) and (max-width:#{$--lg -1})',
-'md-and-donw':(max-width:$--lg -1),
+'md-only':'(min-width:#{$--md}) and (max-width:#{$--lg - 1})',
+'md-and-donw':(max-width:$--lg - 1),
 'md-and-up':(min-width:$--md),
-'lg-only':'(min-width:#{$--lg}) and (max-width:#{$--xl -1})' ,
-'lg-and-donw':(max-width:$--xl -1),
+'lg-only':'(min-width:#{$--lg}) and (max-width:#{$--xl - 1})' ,
+'lg-and-donw':(max-width:$--xl - 1),
 'lg-and-up': (min-width:$--lg),
 'xl-only': (min-width: $--xl)
 );

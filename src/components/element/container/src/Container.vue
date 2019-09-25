@@ -17,7 +17,8 @@ export default {
     isVertical() {
       if (this.direction === 'vertical') {
         return true;
-      } if (this.direction === 'horizontal') {
+      }
+      if (this.direction === 'horizontal') {
         return false;
       }
 
@@ -27,19 +28,18 @@ export default {
           return tag === 'el-header' || tag === 'el-footer';
         })
         : false;
-
-      // if (this.$slots && this.$slots.default) {
-      //   // console.log(this.$slots.default);
-      //   return this.$slots.default.some(vNode => {
-      //     const tag = vNode.componentOptions && vNode.componentOptions.tag;
-      //     if (tag === "el-header" || tag === "el-footer") {
-      //       return true;
-      //     }
-      //   });
-      // } else {
-      //   return false;
-      // }
     },
   },
 };
+// if (this.$slots && this.$slots.default) {
+//   // console.log(this.$slots.default);
+//   return this.$slots.default.some(vNode => {
+//     const tag = vNode.componentOptions && vNode.componentOptions.tag;
+//     if (tag === "el-header" || tag === "el-footer") {
+//       return true;
+//     }
+//   });
+// } else {
+//   return false;
+// }
 </script>

@@ -1,7 +1,9 @@
-.el-col {
-    box-sizing: border-box;
-    float: left;
-  }
+@import './mixins/mixins.scss';
+
+@include b(col){
+  box-sizing: border-box;
+  float: left;
+}
   //for循环
   @for $i from 0 through 24 {
     .el-col-#{$i} {
@@ -20,11 +22,11 @@
     }
   }
   //xs<768px
-  @media only screen and (max-width: 768px-1) {
+  .el-col-xs-0 {
+    display: none;
+  }
+  @include res(xs) {
     @for $i from 0 through 24 {
-      .el-col-xs-0 {
-        display: none;
-      }
       .el-col-xs-#{$i} {
         width: $i/24 * 100%;
       }
@@ -42,11 +44,11 @@
     }
   }
   //sm>=768px
-  @media only screen and (min-width: 768px) {
+  .el-col-sm-0 {
+    display: none;
+  }
+  @include res(sm) {
     @for $i from 0 through 24 {
-      .el-col-sm-0 {
-        display: none;
-      }
       .el-col-sm-#{$i} {
         width: $i/24 * 100%;
       }
@@ -64,11 +66,11 @@
     }
   }
   //md>=992px
-  @media only screen and (min-width: 992px) {
+  .el-col-md-0 {
+    display: none;
+  }
+  @include res(md) {
     @for $i from 0 through 24 {
-      .el-col-md-0 {
-        display: none;
-      }
       .el-col-md-#{$i} {
         width: $i/24 * 100%;
       }
@@ -86,11 +88,11 @@
     }
   }
   //lg>=1200px
-  @media only screen and (min-width: 1200px) {
+  .el-col-lg-0 {
+    display: none;
+  }
+  @include res(lg) {
     @for $i from 0 through 24 {
-      .el-col-lg-0 {
-        display: none;
-      }
       .el-col-lg-#{$i} {
         width: $i/24 * 100%;
       }
@@ -108,11 +110,11 @@
     }
   }
   //xl>=1920px
-  @media only screen and (min-width: 1920px) {
+  .el-col-xl-0 {
+    display: none;
+  }
+  @include res(xl) {
     @for $i from 0 through 24 {
-      .el-col-xl-0 {
-        display: none;
-      }
       .el-col-xl-#{$i} {
         width: $i/24 * 100%;
       }

@@ -3,6 +3,8 @@
 
 
 @include b(row){
+box-sizing: border-box;
+
 @include utils-clearfix;
   //scss Lists @each遍历
   // &--flex,

@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <el-container>
+    <el-icon name="eleme"></el-icon>
+    <el-icon name="loading"></el-icon>
+    <i class="el-icon-edit"></i>
+    <i class="el-icon-share"></i>
+    <i class="el-icon-delete"></i>
+
+
+    <!-- <el-container>
       <el-header>Header</el-header>
       <el-main>Main</el-main>
       <div></div>
@@ -63,7 +70,8 @@
         <el-main>Main</el-main>
         <el-footer>Footer</el-footer>
       </el-container>
-    </el-container>
+    </el-container>-->
+
     <!-- <h1>基础布局</h1>
     <el-row tag="h4">
       <el-col :span="24">
@@ -284,10 +292,7 @@
 
 export default {
   name: 'app',
-  components: {
-    // ElRow,
-    // ElCol,
-  },
+  components: {},
 };
 </script>
 
